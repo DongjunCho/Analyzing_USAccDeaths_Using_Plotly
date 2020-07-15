@@ -1,0 +1,29 @@
+---
+title: "Analyzing USAccDeaths Using Plotly"
+author: "Dongjun_Cho"
+date: "7/14/2020"
+output:
+  ioslides_presentation: default
+  beamer_presentation: default
+---
+
+## Instruction
+Create a web page presentation using R Markdown that features a plot created with Plotly. Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+## Analyzing Data
+Analyzing accidental Deaths in the US 1973-1978
+```{r}
+data <- USAccDeaths
+data
+```
+
+## Plotting
+```{r message=FALSE, warning=FALSE}
+library(plotly)
+figure <- plot_ly(x= ~time(data), y=~data, type="scatter", mode="lines")
+```
+
+## Graph
+```{r ,echo=FALSE, message=FALSE, warning=FALSE}
+figure
+```
